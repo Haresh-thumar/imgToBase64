@@ -1,0 +1,135 @@
+// Custom-Container
+.custom-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+// Section Heading
+.heading {
+    text-align: center;
+    font-weight: 500;
+    color: orangered;
+}
+
+// Input Section
+.upload-dropbox * {
+    box-sizing: border-box;
+    cursor: pointer;
+    // background-color: rgb(229, 238, 255);
+    margin: 0 auto;
+}
+
+// Input
+.inputbox {
+    opacity: 0;
+    width: 430px;
+    height: 400px;
+    position: absolute;
+    background-color: orangered !important;
+}
+
+// Input Outside UI
+.input-dragDrop {
+    display: block;
+    width: 340px;
+    margin: 0px 0 25px 0px;
+    padding: 25px 0 35px 0;
+    color: #008BFF;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px dashed #008cffb7;
+    text-align: center;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+// File Icon
+.input-dragDrop .Neon-input-icon {
+    font-size: 48px;
+    margin-top: 5px;
+    opacity: 0.5;
+    font-size: 70px;
+    transition: all 0.3s ease;
+}
+
+// Input Inside Text
+.Neon-input-text h3 {
+    margin: 20px 0 30px 0;
+    font-size: 18px;
+}
+
+// Browse File Button
+.Neon-input-choose-btn {
+    color: #ffffff;
+    padding: 8px 14px;
+    font-size: 14px;
+    margin-bottom: 15px !important;
+    font-weight: 500;
+    border-radius: 3px;
+    background-color: #008BFF !important;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+// Preview Image
+.img-preview {
+    max-width: 95%;
+    max-height: auto;
+    object-fit: cover;
+    display: flex;
+    margin: 0 auto !important;
+}
+
+.spinner {
+    display: flex;
+    margin: 0 auto;
+}
+
+// Base64 String Font
+.base64-string {
+    font-size: 13px;
+    font-weight: 300;
+    padding: 10px;
+    width: 32vw;
+    height: 40vh;
+    overflow-y: auto;
+    word-wrap: break-word !important;
+    border-radius: 10px;
+    margin: 0 auto;
+    color: rgb(143, 143, 143) !important;
+    border: 1px solid #85c8ff;
+}
+
+// shorturl string section
+.shorturl-string {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px;
+    width: 32vw;
+    height: 10vh;
+    margin: 0 auto;
+    overflow-y: auto;
+    word-wrap: break-word !important;
+    border-radius: 10px;
+    color: rgb(143, 143, 143) !important;
+    border: 1px solid #ff85eb;
+}
+
+
+// Custom Scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(139, 193, 255);
+    border-radius: 10px;
+}

@@ -1,0 +1,44 @@
+<h1>Image to Base64 Convert</h1>
+
+<br><br><br>
+
+<section class="custom-container">
+    <div class="row">
+        <!--------------------------------------- Image Upload Section ---------------------------------------->
+        <div class="col-md-4">
+            <h1 class="heading">Upload Image</h1>
+            <hr>
+            <div class="upload-dropbox">
+                <input class="inputbox" name="imageUrl" type="file" accept="image/*"
+                    (change)="handleInputChange($event)">
+                <div class="input-dragDrop">
+                    <div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div>
+                    <div class="Neon-input-text">
+                        <h3>Drag & Drop Files here</h3>
+                    </div><a class="Neon-input-choose-btn blue">Browse Files</a>
+                </div>
+            </div>
+        </div>
+
+        <!--------------------------------------- Image Preview Section ---------------------------------------->
+        <div class="col-md-3">
+            <h1 class="heading">Preview Image</h1>
+            <hr>
+            <mat-spinner *ngIf="isLoading" color="warn" class="spinner"></mat-spinner>
+            <img [src]="imageSrc" class="img-preview" *ngIf="imageSrc" />
+        </div>
+
+        <!--------------------------------------- Converted Base64 String ---------------------------------------->
+        <div class="col-md-5">
+            <h1 class="heading">Converted Base64 String</h1>
+            <hr>
+            <div class="base64-string">
+                {{imageSrc}}
+            </div>
+            <h1 class="heading mt-5">Convert Short-Url String</h1>
+            <div class="shorturl-string">
+                {{shortUrl}}
+            </div>
+        </div>
+    </div>
+</section>

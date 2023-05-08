@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .mr-5 {
+    margin-right: 10px;
+  }
+  
+  button {
+    height: 30px;
+    padding: 0 7px;
+    display: flex;
+    font-size: 13px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
