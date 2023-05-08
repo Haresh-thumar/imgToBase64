@@ -4,32 +4,33 @@
 
 
 <section class="container">
-    <div class="progress-loader">
-        <mat-progress-bar mode="indeterminate" color="accent" *ngIf="isLoading"></mat-progress-bar>
-    </div>
-    <form #urlForm="ngForm" (ngSubmit)="onSubmitUrl(urlForm)" novalidate autocomplete="off">
-        <div class="input-group mb-3">
-            <input type="url" name="inputUrl" class="form-control" placeholder="Paste Your Url Here..." required>
-            <div class="input-group-append">
-                <button class="btn btn-success short-btn" type="button">Short Url</button>
-            </div>
-        </div>
+  <div class="progress-loader">
+    <mat-progress-bar mode="indeterminate" color="accent" *ngIf="isLoading"></mat-progress-bar>
+  </div>
 
-        <div class="form-error">
-            <p>Please Enter Url</p>
-        </div>
-        <button class="btn btn-success">Short Url</button>
-    </form>
-
-    <div class="short-url-div">
-        <h2>Generate URL Link</h2>
-        <a href="" target="_blank" title="Click Me">URL Link</a>
+  <form #urlForm="ngForm" novalidate autocomplete="off">
+    <div class="input-group mb-3">
+      <input type="url" name="inputUrl" class="form-control" [(ngModel)]="model.inputUrl"
+        placeholder="Paste Your Url Here..." required>
+      <div class="input-group-append">
+        <button class="btn btn-success short-btn" [disabled]="urlForm.invalid" type="button"
+          (click)="onSubmitUrl(urlForm)">
+          {{isLoading ? 'Generating...' : 'Generate URL'}}
+        </button>
+      </div>
     </div>
+  </form>
 
-    <div class="short-url-btn">
-        <button class="btn btn-primary mr-4">Copy Url</button>
-        <button class="btn btn-danger">Reset</button>
-    </div>
+  <div class=" short-url-div">
+    <h2>Generate URL Link</h2>
+    <a [href]="shortenedUrl" target="_blank" title="Click Me">{{shortenedUrl}}</a>
+  </div>
+
+  <div class="short-url-btn">
+    <button class="btn btn-primary mr-4" (click)="copyUrl($event)">{{isTextCopied? 'Copied':
+      'Copy'}}</button>
+    <button class="btn btn-danger" (click)="reset()">Reset</button>
+  </div>
 </section>
 
 
@@ -39,5 +40,3 @@
 
 
 <!-- npm i ng-tiny-url -->
-
-<!-- https://www.youtube.com/watch?v=HfgrPruo-ek -->
