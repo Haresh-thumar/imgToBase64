@@ -9,10 +9,8 @@ export class ImgToBase64Component {
 
   constructor() { }
 
-  shortUrl:string = '';
-
+  shortUrl: string = '';
   imageSrc: string = '';
-
   isLoading: boolean = false;
 
   handleInputChange(e: any) {
@@ -33,14 +31,12 @@ export class ImgToBase64Component {
   _handleReaderLoaded(e: any) {
     let reader = e.target;
     this.imageSrc = reader.result;
-    console.log(this.imageSrc)
+    console.log(this.imageSrc);
     this.isLoading = false;
-
     function shortenDataUrl(dataUrl: any) {
       let blob = new Blob([dataUrl], { type: 'text/plain' });
       return URL.createObjectURL(blob);
     }
-
     let dataUrl = this.imageSrc;
     this.shortUrl = shortenDataUrl(dataUrl);
     console.log(this.shortUrl);

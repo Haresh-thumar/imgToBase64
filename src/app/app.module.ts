@@ -15,13 +15,17 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 
 import { NgTinyUrlModule } from 'ng-tiny-url';
+import { JpgCompressorComponent } from './jpg-compressor/jpg-compressor.component';
+import { PngCompressorComponent } from './png-compressor/png-compressor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ImgToBase64Component,
-    UrlShortnerComponent
+    UrlShortnerComponent,
+    JpgCompressorComponent,
+    PngCompressorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,35 @@
+<h1>Jpg-Compressor</h1>
+
+<br><br>
+
+
+<!-- <input type="file" accept="image/*" (change)="upload($event)"> -->
+
+
+<div class="container d-flex justify-content-center">
+  <!--------- Image Upload --------->
+  <div class="upload-dropbox">
+    <input class="inputbox" name="imageUrl" type="file" accept="image/*" (change)="upload($event)">
+    <div class="input-dragDrop">
+      <div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div>
+      <div class="Neon-input-text">
+        <h3>Drag & Drop Files here</h3>
+      </div><a class="Neon-input-choose-btn blue">Browse Files</a>
+    </div>
+  </div>
+</div>
+
+
+<!--------- Image Preview -------->
+<mat-spinner *ngIf="isLoader" color="warn" class="spinner"></mat-spinner>
+<img [src]="imageSrc" class="img-preview" *ngIf="imageSrc" />
+<p class="text-danger">{{actualImgSize}}</p>
+<p class="text-success">{{compressedImgSize}}</p>
+
+
+
+
+
+<div>
+
+</div>
