@@ -1,0 +1,36 @@
+
+.progress-loader {
+    margin: 20px 0;
+}
+.form-control {
+    border: 1px solid rgb(0, 204, 51);
+    border-radius: 0;
+    color: #000;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    font-size: 15px;
+}
+
+button.short-btn {
+    background: rgb(4, 190, 51);
+}
+
+button.short-btn:focus {
+    box-shadow: none!important;
+    background: rgb(2, 168, 43)!important;
+}
+
+.short-url-div {
+    text-align: center;
+}
+
+.short-url-btn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
