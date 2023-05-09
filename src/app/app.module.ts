@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { NgTinyUrlModule } from 'ng-tiny-url';
 import { JpgCompressorComponent } from './jpg-compressor/jpg-compressor.component';
 import { PngCompressorComponent } from './png-compressor/png-compressor.component';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PngCompressorComponent } from './png-compressor/png-compressor.componen
     ImgToBase64Component,
     UrlShortnerComponent,
     JpgCompressorComponent,
-    PngCompressorComponent
+    PngCompressorComponent,
+    ScrollTopComponent
   ],
   imports: [
     BrowserModule,

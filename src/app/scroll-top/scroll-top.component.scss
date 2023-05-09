@@ -1,0 +1,14 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border: 1px solid rgb(250, 5, 107);
+    border-radius: 40px;
+    background-color: rgb(250, 5, 107);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
