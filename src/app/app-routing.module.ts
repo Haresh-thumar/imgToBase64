@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { ImgToBase64Component } from './img-to-base64/img-to-base64.component';
 import { UrlShortnerComponent } from './url-shortner/url-shortner.component';
 import { JpgCompressorComponent } from './jpg-compressor/jpg-compressor.component';
 import { PngCompressorComponent } from './png-compressor/png-compressor.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { DragDropFileUploadComponent } from './drag-drop-file-upload/drag-drop-file-upload.component';
 
 const routes: Routes = [
   { path: 'imageToBase64', component: ImgToBase64Component },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'jpg-compressor', component: JpgCompressorComponent },
   { path: 'png-compressor', component: PngCompressorComponent },
   { path: 'scrollTop', component: ScrollTopComponent },
+  { path: 'drag-drop-img-upload', component: DragDropFileUploadComponent },
 ];
 
 @NgModule({

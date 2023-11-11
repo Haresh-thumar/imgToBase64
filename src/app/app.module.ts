@@ -12,12 +12,15 @@ import { ImgToBase64Component } from './img-to-base64/img-to-base64.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UrlShortnerComponent } from './url-shortner/url-shortner.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgTinyUrlModule } from 'ng-tiny-url';
 import { JpgCompressorComponent } from './jpg-compressor/jpg-compressor.component';
 import { PngCompressorComponent } from './png-compressor/png-compressor.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { DragDropFileUploadComponent } from './drag-drop-file-upload/drag-drop-file-upload.component';
+import { DragDropDirective } from './drag-drop-file-upload/drag-drop.directive';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -27,19 +30,23 @@ import { ScrollTopComponent } from './scroll-top/scroll-top.component';
     UrlShortnerComponent,
     JpgCompressorComponent,
     PngCompressorComponent,
-    ScrollTopComponent
+    ScrollTopComponent,
+    DragDropFileUploadComponent,
+    DragDropDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    NgTinyUrlModule
+    NgTinyUrlModule,
+    ImageCropperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
