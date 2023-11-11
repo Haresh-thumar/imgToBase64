@@ -1,0 +1,82 @@
+=======================================================================================================================
+							  HTML File													
+=======================================================================================================================
+<div class="drop-zone" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    <p>Drag & Drop your image here</p>
+</div>
+<input type="file" (change)="onFileSelected($event)" #fileInput hidden />
+<div *ngIf="uploadedImage">
+    <h3>Uploaded Image</h3>
+    <img [src]="uploadedImage" alt="Uploaded" />
+    <div>
+        <h4>Base64 Image:</h4>
+        <textarea rows="4" [value]="base64Image" readonly></textarea>
+    </div>
+</div>
+
+
+
+=======================================================================================================================
+							  CSS File													
+=======================================================================================================================
+.drop-zone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.drop-zone p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+
+
+=======================================================================================================================
+							  TS File													
+=======================================================================================================================
+ uploadedImage?: string | ArrayBuffer | any;
+  base64Image?: string | any;
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    this.handleFiles(event.dataTransfer?.files);
+  }
+
+  onFileSelected(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.handleFiles(inputElement.files);
+    inputElement.value = ''; // Clear the input field
+  }
+
+  private handleFiles(files: FileList | any) {
+    if (files && files.length > 0) {
+      const file = files[0];
+      if (file.type.startsWith('image/')) {
+        this.convertImageToBase64(file);
+      } else {
+        console.error('Unsupported file type');
+      }
+    }
+  }
+
+  private convertImageToBase64(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.uploadedImage = reader.result;
+      this.base64Image = reader.result?.toString();
+    };
+    reader.readAsDataURL(file);
+  }
